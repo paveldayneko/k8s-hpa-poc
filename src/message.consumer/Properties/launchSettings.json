@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "message.consumer": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "Key": "Value",
+        "r_host": "rabbitmq://localhost",
+        "r_pwd": "guest",
+        "r_user": "guest"
+      }
+    }
+  }
+}
