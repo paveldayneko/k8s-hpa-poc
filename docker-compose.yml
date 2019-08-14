@@ -1,0 +1,24 @@
+version: "3"
+services:
+  consumer:
+    build:      
+      context: ./src
+      dockerfile: message.consumer/Dockerfile
+    image: message.consumer
+    container_name: message.consumer   
+    environment:
+        - r_host=rabbitmq://host.docker.internal
+        - r_user=guest
+        - r_pwd=guest
+  message.producer:
+    build:
+      context: ./src
+      dockerfile: message.producer/Dockerfile
+    image: message.producer
+    container_name: message.producer
+    ports:
+    - "5001:80"
+    environment:
+        - r_host=rabbitmq://host.docker.internal
+        - r_user=guest
+        - r_pwd=guest
